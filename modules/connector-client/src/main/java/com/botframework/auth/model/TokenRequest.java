@@ -1,7 +1,7 @@
 package com.botframework.auth.model;
 
 /**
- * Created by urusaai on 09.04.2017.
+ * Created by some user on 09.04.2017.
  */
 public class TokenRequest {
 
