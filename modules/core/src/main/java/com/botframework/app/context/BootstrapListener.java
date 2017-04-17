@@ -9,7 +9,6 @@ import javax.servlet.ServletContextListener;
 public class BootstrapListener implements ServletContextListener{
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-
     }
 
 

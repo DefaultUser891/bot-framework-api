@@ -11,6 +11,6 @@ public class MessageReceiver {
 
     @GET
     public void receiveMessage() {
-
+        System.out.println("success");
     }
 }

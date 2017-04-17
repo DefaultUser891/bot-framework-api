@@ -12,15 +12,17 @@ import io.swagger.client.ApiResponse;
  * Created by urusaai on 09.04.2017.
  */
 public class AuthenticationApi {
-
     public static final String BASE_URL = "https://login.microsoftonline.com";
     public static final String DEFAULT_SCOPE = "https://graph.microsoft.com/.default";
-    public static final String JSON_CONTENT_TYPE = "application/json";
+
+    public AuthenticationApi(ApiClient apiClient) {
+        this.apiClient = apiClient;
+    }
+
+    protected ApiClient apiClient;
 
     public String requestToken() {
          try {
-            ApiClient apiClient = new ApiClient();
-
             RequestBody requestBody = new FormEncodingBuilder().add("grant_type", "client_credentials")
                     .add("client_id", "0cb4c260-21ee-4cd3-9e76-90bd9b54ab76")
                     .add("client_secret", "i3KZgaOPkRyiNE0ycNgLAq1")
