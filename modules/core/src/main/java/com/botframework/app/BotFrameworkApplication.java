@@ -1,5 +1,6 @@
 package com.botframework.app;
 
+import com.botframework.app.context.ConnectorClientBinder;
 import org.glassfish.jersey.server.ResourceConfig;
 
 
@@ -10,9 +11,8 @@ public class BotFrameworkApplication extends ResourceConfig {
 
     public BotFrameworkApplication() {
         packages("com.botframework.jersey.resources");
-
+        register(new ConnectorClientBinder());
     }
-
 
 
 }
