@@ -2,6 +2,7 @@ package com.botframework.jersey.resources;
 
 import io.swagger.client.ApiClient;
 import io.swagger.client.model.Activity;
+import org.apache.log4j.Logger;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -19,7 +20,8 @@ public class MessageReceiver {
     @Inject
     protected ApiClient apiClient;
 
-    //todo logging
+    @Inject
+    protected Logger logger;
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -27,6 +29,7 @@ public class MessageReceiver {
         try {
             Activity activity = apiClient.getJSON().deserialize(requestBody, Activity.class);
             String conversationId = activity.getConversation().getId();
+            logger.debug("Conversation id is " + conversationId);
             return Response.ok().build();
         } catch (Exception e) {
             e.printStackTrace();

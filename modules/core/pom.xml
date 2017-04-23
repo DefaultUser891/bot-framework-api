@@ -18,7 +18,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
                     <warName>botframework</warName>
-                    <outputDirectory>F:\work\botframework\bot-framework-api\deploy\tomcat\webapps</outputDirectory>
+                    <outputDirectory>${tomcatDir}</outputDirectory>
                     <webXml>web\WEB-INF\web.xml</webXml>
                 </configuration>
             </plugin>
@@ -56,7 +56,7 @@
 
     <properties>
         <jersey-version>2.25.1</jersey-version>
-        <tomcatPath>../../</tomcatPath>
+        <tomcatDir>${project.parent.basedir}/deploy/tomcat/webapps</tomcatDir>
     </properties>
 
 </project>

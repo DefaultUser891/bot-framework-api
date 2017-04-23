@@ -1,4 +1,4 @@
-package com.botframework.app.context;
+package com.botframework.app.inject;
 
 import io.swagger.client.ApiClient;
 import io.swagger.client.api.ConversationsApi;
